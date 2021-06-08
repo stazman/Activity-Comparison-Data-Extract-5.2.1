@@ -44,9 +44,30 @@ console.log(notOperational);
  
  
 //Task 2: Get count of all cars with no Insurance
- 
- 
- 
+
+let uninsured = 0;
+
+if (!gondola.insured){
+  uninsured++;
+}
+
+if (!stockCar.insured){
+  uninsured++;
+}
+
+if (!boxCar.insured){
+  uninsured++;
+}
+
+if (!tankCar.insured){
+  uninsured++;
+}
+
+console.log(uninsured);
+
+
+//Refactor Task 2
+
  
 //Task 3: Total dollar amount spent on tankCars, stockCars, boxCars over 6500.00
 // if the dollar amount spent on each ^ > 6500.00 add to total
