@@ -72,6 +72,28 @@ console.log(uninsured);
 //Task 3: Total dollar amount spent on tankCars, stockCars, boxCars over 6500.00
 // if the dollar amount spent on each ^ > 6500.00 add to total
 
+let expensiveCars = 0;
+
+if (gondola.pricePer >= 6500.00){
+  expensiveCars+=gondola.pricePer;
+}
+
+if (stockCar.pricePer >= 6500.00){
+  expensiveCars+=stockCar.pricePer;
+}
+
+if (boxCar.pricePer >= 6500.00){
+  expensiveCars+=boxCar.pricePer;
+}
+
+if (tankCar.pricePer >= 6500.00){
+  expensiveCars+=tankCar.pricePer;
+}
+
+console.log(expensiveCars);
+
+
+//Refactor Task 3
 
 
 
