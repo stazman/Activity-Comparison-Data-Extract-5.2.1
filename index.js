@@ -6,31 +6,35 @@ let tankCar = {quantity: 3, insured: true, operational: true, pricePer: 7200};
 
 //Task 1: Get list of all cars reported as non operational (operational = false)
 
+
+//For lesson version
+
 let allCars = [];
 
 allCars.push(gondola, stockCar, boxCar, tankCar);
 
-let notOperational = [];
+const notOperational = [];
 
-//For lesson version
+// if (!gondola.operational){
+//   notOperational.push(gondola);
+// }
 
-if (!gondola.operational){
-  notOperational.push(gondola);
-}
+// if (!stockCar.operational){
+//   notOperational.push(stockCar);
+// }
 
-if (!stockCar.operational){
-  notOperational.push(stockCar);
-}
+// if (!boxCar.operational){
+//   notOperational.push(boxCar);
+// }
 
-if (!boxCar.operational){
-  notOperational.push(boxCar);
-}
+// if (!tankCar.operational){
+//   notOperational.push(tankCar);
+// }
 
-if (!tankCar.operational){
-  notOperational.push(tankCar);
-}
+// console.log(notOperational);
 
-//Stubbing refactoring
+
+//Attempt at refactoring Task 1 --  this didn't work; very hard to do without built-in ES6 functions such as forEach()
 
 // for (let i = 0; i < allCars.length; i++){
 //  for (const car of allCars){
@@ -40,7 +44,19 @@ if (!tankCar.operational){
 //  }
 // }
 
-console.log(notOperational);
+//Refactored Task 1:
+
+function nonOperatingCars (x) {
+
+  allCars.forEach(cObj => {
+    if (!cObj.operational){
+      notOperational.push(cObj)
+    }
+  });
+  console.log(notOperational);
+}
+
+nonOperatingCars(allCars);
 
 
 //Task 2: Get count of all cars with no Insurance
