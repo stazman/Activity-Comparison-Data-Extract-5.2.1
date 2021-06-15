@@ -46,9 +46,9 @@ const notOperational = [];
 
 //Refactored Task 1:
 
-function nonOperatingCars (x) {
+function nonOperatingCars (arr) {
 
-  allCars.forEach(cObj => {
+  arr.forEach(cObj => {
     if (!cObj.operational){
       notOperational.push(cObj)
     }
@@ -57,6 +57,7 @@ function nonOperatingCars (x) {
 }
 
 nonOperatingCars(allCars);
+
 
 
 //Task 2: Get count of all cars with no Insurance
@@ -82,7 +83,23 @@ if (!tankCar.insured){
 console.log(uninsured);
 
 
+
 //Refactor Task 2
+
+function notInsured(arr){
+
+  let uninsured = 0;
+
+  arr.forEach(cObj => {
+    if (!cObj.insured){
+      uninsured++;
+    }
+  })
+  console.log(uninsured);
+}
+
+notInsured(allCars);
+
 
 
 //Task 3: Total dollar amount spent on tankCars, stockCars, boxCars over 6500.00
@@ -110,6 +127,7 @@ console.log(expensiveCars);
 
 
 //Refactor Task 3
+
 
 
 
