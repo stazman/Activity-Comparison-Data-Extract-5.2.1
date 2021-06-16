@@ -9,7 +9,7 @@ let tankCar = {quantity: 3, insured: true, operational: true, pricePer: 7200};
 
 //For lesson version
 
-let allCars = [];
+const allCars = [];
 
 allCars.push(gondola, stockCar, boxCar, tankCar);
 
@@ -44,6 +44,7 @@ const notOperational = [];
 //  }
 // }
 
+
 //Refactored Task 1:
 
 function nonOperatingCars (arr) {
@@ -53,34 +54,30 @@ function nonOperatingCars (arr) {
       notOperational.push(cObj)
     }
   });
-  console.log(notOperational);
+  return notOperational;
 }
-
-nonOperatingCars(allCars);
-
-
 
 //Task 2: Get count of all cars with no Insurance
 
-let uninsured = 0;
+const uninsured = 0;
 
-if (!gondola.insured){
-  uninsured++;
-}
+// if (!gondola.insured){
+//   uninsured++;
+// }
 
-if (!stockCar.insured){
-  uninsured++;
-}
+// if (!stockCar.insured){
+//   uninsured++;
+// }
 
-if (!boxCar.insured){
-  uninsured++;
-}
+// if (!boxCar.insured){
+//   uninsured++;
+// }
 
-if (!tankCar.insured){
-  uninsured++;
-}
+// if (!tankCar.insured){
+//   uninsured++;
+// }
 
-console.log(uninsured);
+// console.log(uninsured);
 
 
 
@@ -88,47 +85,55 @@ console.log(uninsured);
 
 function notInsured(arr){
 
-  let uninsured = 0;
-
   arr.forEach(cObj => {
     if (!cObj.insured){
       uninsured++;
     }
   })
-  console.log(uninsured);
+  return uninsured;
 }
-
-notInsured(allCars);
-
-
 
 //Task 3: Total dollar amount spent on tankCars, stockCars, boxCars over 6500.00
 // if the dollar amount spent on each ^ > 6500.00 add to total
 
 let expensiveCars = 0;
 
-if (gondola.pricePer >= 6500.00){
-  expensiveCars+=gondola.pricePer;
-}
+// if (gondola.pricePer >= 6500.00){
+//   expensiveCars+=gondola.pricePer;
+// }
 
-if (stockCar.pricePer >= 6500.00){
-  expensiveCars+=stockCar.pricePer;
-}
+// if (stockCar.pricePer >= 6500.00){
+//   expensiveCars+=stockCar.pricePer;
+// }
 
-if (boxCar.pricePer >= 6500.00){
-  expensiveCars+=boxCar.pricePer;
-}
+// if (boxCar.pricePer >= 6500.00){
+//   expensiveCars+=boxCar.pricePer;
+// }
 
-if (tankCar.pricePer >= 6500.00){
-  expensiveCars+=tankCar.pricePer;
-}
+// if (tankCar.pricePer >= 6500.00){
+//   expensiveCars+=tankCar.pricePer;
+// }
 
-console.log(expensiveCars);
+// console.log(expensiveCars);
 
 
 //Refactor Task 3
 
+function mostExpensiveCars(arr){
 
+  arr.forEach( c => {
+    if (c.pricePer >= 6500.00){
+      expensiveCars += c.pricePer;
+    }
+  })
+  return expensiveCars;
+}
 
 
 //Task 4: Output results
+
+console.log(nonOperatingCars(allCars));
+
+console.log(notInsured(allCars));
+
+console.log(mostExpensiveCars(allCars));
